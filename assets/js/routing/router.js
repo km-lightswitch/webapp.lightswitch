@@ -16,6 +16,7 @@ define(
 		return Marionette.AppRouter.extend({
 			initialize: function() {
 				this.route('home', createRoutingFunction('home', this));
+				this.route('dashboard', createRoutingFunction('dashboard', this));
 			}
 		});
 

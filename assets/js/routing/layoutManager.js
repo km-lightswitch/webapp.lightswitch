@@ -5,12 +5,15 @@ define(
 		'backbone',
 		'backbone.wreqr',
 		'views/layouts/homeLayout',
-		'views/pages/homePage'
+		'views/pages/homePage',
+		'views/layouts/dashboardLayout',
+		'views/pages/dashboardPage'
 	],
 
-	function (Backbone, Wreqr, HomeLayout, HomePage) {
+	function (Backbone, Wreqr, HomeLayout, HomePage, DashboardLayout, DashboardPage) {
 		var pagePathMap = {
-			'home': { page: HomePage, layout: HomeLayout }
+			'home': { page: HomePage, layout: HomeLayout },
+			'dashboard': { page: DashboardPage, layout: DashboardLayout }
 		};
 
 		return function() {
