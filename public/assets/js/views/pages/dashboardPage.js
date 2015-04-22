@@ -13,6 +13,11 @@ define(
             model: new InstanceModel(),
             template: Handlebars.compile(template),
 
+            initialize: function() {
+                this.listenTo(this.model, 'change', this.render);
+                this.model.fetch();
+            },
+
             render: function() {
                 var htmlOut = this.template(this.model.toJSON());
                 this.$el.html(htmlOut);

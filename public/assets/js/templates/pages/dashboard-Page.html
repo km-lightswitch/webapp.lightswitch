@@ -11,14 +11,16 @@
     </tr>
     </thead>
     <tbody>
+    {{#each instances}}
     <tr>
-        <td>{{name}}</td>
-        <td>{{instance_id}}</td>
-        <td>{{cloud_name}}:{{location_name}}</td>
-        <td>{{state}}</td>
-        <td>{{state_at}}</td>
-        <td>{{schedule_description}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.instance_id}}</td>
+        <td>{{this.cloud_name}}:{{this.location_name}}</td>
+        <td>{{this.state}}</td>
+        <td>{{this.state_at}}</td>
+        <td>{{this.schedule_description}}</td>
         <td>Stop/Start</td>
     </tr>
+    {{/each}}
     </tbody>
 </table>
