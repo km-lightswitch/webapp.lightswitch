@@ -1,3 +1,9 @@
-bin/
-.idea
-.bundle
+/.bundle
+
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+/log/*
+!/log/.keep
+/tmp
+/.idea
