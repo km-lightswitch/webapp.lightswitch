@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Instance Id</th>
+    <th>Name tag</th>
+    <th>State</th>
+    <th>Public DNS Name</th>
+  </tr>
+
+  <% @instance_info.each do |instance| %>
+      <tr>
+        <td><%= instance[:instance_id] %></td>
+        <td><%= instance[:name_tag] %></td>
+        <td><%= instance[:state] %></td>
+        <td><%= instance[:public_dns_name] %></td>
+      </tr>
+  <% end %>
+</table>

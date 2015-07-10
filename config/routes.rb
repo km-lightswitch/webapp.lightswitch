@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   get '/about' => 'home#about'
 
   get '/credentials' => 'credentials#index'
+  get '/instances/discover', to: 'instances#discover'
 
   resource :credentials
-
+  resource :instances
 
 
   # The priority is based upon order of creation: first created -> highest priority.
