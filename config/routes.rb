@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   get '/home/index' => 'home#index'
   get '/about' => 'home#about'
 
+  get '/credentials' => 'credentials#index'
+
+  resource :credentials
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
