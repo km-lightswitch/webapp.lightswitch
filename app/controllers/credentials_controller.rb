@@ -12,7 +12,6 @@ class CredentialsController < ApplicationController
 
     @credential.save
     redirect_to action: 'show', id:@credential.id
-    # render plain: params[:credential].inspect
   end
 
   def show
