@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
-  root 'home#index'
-  get '/home' => 'home#index'
-  get '/home/index' => 'home#index'
-  get '/about' => 'home#about'
+  get '/secret', to: 'pages#index', as: :secret
+  root to: 'pages#index'
+  #root 'home#index'
+  # get '/home' => 'home#index'
+  # get '/home/index' => 'home#index'
+  # get '/about' => 'home#about'
+  #
+  # get '/credentials' => 'credentials#index'
+  # get '/instances/discover', to: 'instances#discover'
+  #
+  # resource :credentials
+  # resource :instances
 
-  get '/credentials' => 'credentials#index'
-  get '/instances/discover', to: 'instances#discover'
-
-  resource :credentials
-  resource :instances
+  resources :users, only: [:new, :create]
+  get '/sign_up', to: 'users#new', as: :sign_up
 
 
   # The priority is based upon order of creation: first created -> highest priority.

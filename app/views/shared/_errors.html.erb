@@ -1,0 +1,10 @@
+<% if object.errors.any? %>
+    <ul>
+      <% object.errors.messages.keys.each do |key| %>
+          <li><%= key %>
+          <% object.errors.messages[key].each do |message| %>
+              <%= message %></li>
+          <% end %>
+      <% end %>
+    </ul>
+<% end %>

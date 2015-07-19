@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'validates_email_format_of'
+gem 'sorcery'
 gem 'lightswitch-cloud', '0.0.4'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
