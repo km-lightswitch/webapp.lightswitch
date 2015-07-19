@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
-  get '/secret', to: 'pages#index', as: :secret
-  root to: 'pages#index'
-  #root 'home#index'
-  # get '/home' => 'home#index'
-  # get '/home/index' => 'home#index'
-  # get '/about' => 'home#about'
-  #
-  # get '/credentials' => 'credentials#index'
-  # get '/instances/discover', to: 'instances#discover'
-  #
-  # resource :credentials
-  # resource :instances
+  root to: 'home#index'
+  get '/home', to: 'home#index'
+  get '/home/index', to: 'home#index'
+  get '/about', to: 'home#about'
+
+  get '/credentials', to: 'credentials#index'
+  get '/instances/discover', to: 'instances#discover'
+
+  resource :credentials
+  resource :instances
 
   resources :users, only: [:new, :create]
   get '/sign_up', to: 'users#new', as: :sign_up
