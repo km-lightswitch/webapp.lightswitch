@@ -1,3 +1,5 @@
+require_relative '../../app/models/profile'
+
 class CredentialsController < ApplicationController
 
   def new
@@ -9,7 +11,11 @@ class CredentialsController < ApplicationController
   end
 
   def create
+    profile = Profile.new(user_id: @current_user.id)
+    profile.save
+
     @credential = Credential.new(credential_params)
+    @credential.profile_id = profile.id
 
     if @credential.save
       redirect_to action: 'show', id: @credential.id

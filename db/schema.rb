@@ -11,15 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150719112716) do
+ActiveRecord::Schema.define(version: 20150719163241) do
 
   create_table "credentials", force: :cascade do |t|
     t.string   "name"
     t.string   "access_key_id"
     t.string   "secret_access_key"
+    t.integer  "profile_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
   end
+
+  add_index "credentials", ["profile_id"], name: "index_credentials_on_profile_id"
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
